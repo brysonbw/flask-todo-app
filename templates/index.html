@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+    <h1>Todos</h1>
+    {% if tasks|length < 1 %}
+    <h4>There are no todos. Create one below!</h4>
+    {% else %}
+    <table class="table w-75 mx-auto text-center">
+        <thead>
+            <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Added</th>
+                <th scope="col">Actions</th>
+            </tr>
+
+            <tr>
+                {% for task in tasks %}
+                <td>{{ task.content }}</td>
+                <td>{{ task.date_created.date() }}</td>
+                <td>
+                    <a href="/delete/{{task.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{task.id}}">Update</a>
+                </td>
+            </tr>
+            {% endfor %}
+    </table>
+    {% endif %}
+
+    <div class="form text-center">
+        <form action="/" method="POST">
+            <input type="text" name="content" id="content">
+            <input type="submit" value="Add Task">
+        </form>
+    </div>
+
+</div>
+
+
+{% endblock content %}
