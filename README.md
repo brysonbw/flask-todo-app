@@ -9,4 +9,4 @@ HTML
 CSS
 
 Database:
-SQLAlchemy w/ MySQL
+SQLAlchemy w/ SQLite
