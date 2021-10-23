@@ -10,3 +10,5 @@ CSS
 
 Database:
 SQLAlchemy w/ SQLite
+
+CRUD operations
